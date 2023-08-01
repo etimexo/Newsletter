@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import './globals.css'
 import mobile from '../../public/illustration-sign-up-mobile.svg'
 import desktop from '../../public/illustration-sign-up-desktop.svg'
@@ -30,8 +31,15 @@ export default function Home() {
                 <h4 className='valid-email'>valid email required</h4>
                 <br />
               </div>
-              <input type="email" placeholder='email@company.com' required/>
-              <button type="submit">Subscribe to monthly newsletter</button>
+              <input id='input' type="email" placeholder='email@company.com' required/>
+              <button id='submit' type="submit">
+                <Link href="/success.tsx" >
+                  <a>
+                  Subscribe to monthly newsletter
+                  </a>
+                </Link>
+                
+                </button>
             </form>
           </div>
           <Image src={desktop} className='desktop-bground' alt='...' />
