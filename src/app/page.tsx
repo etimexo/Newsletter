@@ -33,10 +33,8 @@ export default function Home() {
               </div>
               <input id='input' type="email" placeholder='email@company.com' required/>
               <button id='submit' type="submit">
-                <Link href="/success.tsx" >
-                  <a>
+                <Link href="./page/success">
                   Subscribe to monthly newsletter
-                  </a>
                 </Link>
                 
                 </button>
