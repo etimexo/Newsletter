@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import success from './success/page'
 import './globals.css'
 import mobile from '../../public/illustration-sign-up-mobile.svg'
 import desktop from '../../public/illustration-sign-up-desktop.svg'
@@ -33,10 +34,9 @@ export default function Home() {
               </div>
               <input id='input' type="email" placeholder='email@company.com' required/>
               <button id='submit' type="submit">
-                <Link href="./page/success">
+                <Link href='/success'>
                   Subscribe to monthly newsletter
-                </Link>
-                
+                </Link> 
                 </button>
             </form>
           </div>
