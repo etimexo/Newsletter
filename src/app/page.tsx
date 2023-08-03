@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-import success from "./success/page";
 import "./globals.css";
 import mobile from "../../public/illustration-sign-up-mobile.svg";
 import desktop from "../../public/illustration-sign-up-desktop.svg";

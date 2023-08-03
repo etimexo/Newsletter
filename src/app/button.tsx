@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-
 export default function button() {
   return (
     <form action="POST">
@@ -10,9 +9,11 @@ export default function button() {
         <br />
       </div>
       <input id="input" type="email" placeholder="email@company.com" required />
+      <Link href="/success">
       <button id="submit" type="submit">
-        <Link href="/success">Subscribe to monthly newsletter</Link>
+        Subscribe to monthly newsletter
       </button>
+      </Link>
     </form>
   );
 }
