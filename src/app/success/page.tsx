@@ -2,7 +2,7 @@ import React from 'react'
 import '../suc.css'
 import check from '../../../public/icon-list.svg'
 import Image from 'next/image'
-import page from '../page'
+import '../button'
 
 export default function success() {
   return (
