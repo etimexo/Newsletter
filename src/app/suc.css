@@ -6,13 +6,13 @@
   }
 .main2 {
     width: 40vw;
-    min-height: 60vh;
-    padding: 50px;
+    min-height: 70vh;
+    padding: 40px;
     position: relative;
 }
 .check2 {
     position: relative;
-    left: -3vw;
+    left: -2vw;
     width: 10vw;
     height: 10vh;
 }

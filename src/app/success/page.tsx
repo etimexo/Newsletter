@@ -2,9 +2,7 @@ import React from 'react'
 import '../suc.css'
 import check from '../../../public/icon-list.svg'
 import Image from 'next/image'
-import '../button'
-
-export default function success() {
+export default function Success() {
   return (
     <main className='main2'>
       <Image src={check} className='check2' alt='...'/>
