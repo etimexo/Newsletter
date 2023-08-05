@@ -4,8 +4,6 @@ import check from '../../../public/icon-list.svg'
 import Image from 'next/image'
 import '../button'
 
-
-
 export default function success() {
   return (
     <main className='main2'>

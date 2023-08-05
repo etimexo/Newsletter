@@ -85,7 +85,7 @@ a {
     margin-top: 5%;
     background-color: var(--white);
     width: 70%;
-    height: 80vh;
+    min-height: 80vh;
     border-radius: 25px;
     padding: 35px 20px;
   }
