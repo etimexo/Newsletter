@@ -45,11 +45,11 @@ form {
   justify-content: space-between;
 }
 .valid-email {
-  display: none;
+  /* display: none; */
 }
-.valid-email.active {
+.valid-email {
   color: red;
-  right: 0;
+  margin-right: -250px;
 }
 label {
   font-weight: 700;

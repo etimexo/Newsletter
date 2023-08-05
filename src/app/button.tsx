@@ -2,46 +2,22 @@
 
 import React from "react";
 import Link from "next/link";
-import { useFormik } from "formik";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 export default function Button() {
-  const validate = (values) => {
-    const errors = {};
-
-    if (!values.email) {
-      errors.email = "Valid email required";
-    } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-    ) {
-      errors.email = "Valid email required";
-    }
-
-    return errors;
-  }
-  const formik = useFormik({
-    initialValues: {
-      email: ""
-    },
-    validate,
-    onSubmit: (values) => {
-      alert ("Success");
-    }
-  })
+  const { register, handleSubmit, formState:{errors} } = useForm();
+  const onSubmit = (data) => console.log(data);
   return (
-    <form onSubmit={formik.handleSubmit} autoComplete="off">
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className="labeling">
         <label htmlFor="email">Email address</label>
-        <h4 className="valid-email">valid email required</h4>
+        <h4 className="valid-email">{errors.email && <p>valid email required</p>}</h4>
         <br />
       </div>
-      <input 
-      id="input" 
-      type="email" 
-      placeholder="email@company.com" 
-      value={formik.values.email}
-      onChange={formik.handleChange}
-      />
+      <input type="email" {...register("email", { required: true, pattern: /^\S+@\S+$/i })} />
+      {/* {errors.email && <p>Email is required and must be valid</p>} */}
       {/* <Link href="/success"> */}
-        <button id="submit" onClick={formik.handleSubmit} type="submit">
+        <button id="submit" type="submit">
         Subscribe to monthly newsletter
       </button>
       {/* </Link> */}
