@@ -2,6 +2,8 @@ import React from 'react'
 import '../suc.css'
 import check from '../../../public/icon-list.svg'
 import Image from 'next/image'
+import Link from 'next/link'
+import '../page'
 export default function Success() {
   return (
     <main className='main2'>
@@ -10,8 +12,12 @@ export default function Success() {
         Thanks for subscribing
       </h1>
       <p>
-        A confirmation email has been sent to 
+        A confirmation email has been sent to <strong><span id='userEmail'></span></strong>. 
+        Please open it and click the button inside to confirm your subscription.
       </p>
+      <button>
+        Dismiss message
+      </button>
     </main>
   )
 };
