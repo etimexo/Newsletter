@@ -8,9 +8,13 @@ import Button from "./button";
 import Success from "./success/page";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
+import { type } from "os";
+
 export default function Home() {
+  let value = document.getElementById("input")
   const [success, setSuccess] = useState(false);
-  const [emailValue, setEmailValue] = useState("");
+  let [emailValue, setEmailValue] = useState("");
 
   const {
     register,
@@ -18,9 +22,19 @@ export default function Home() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data: any) => {
+    // setEmailValue(data.email);
     setSuccess(true);
     console.log(data);
+    const emailValue = data.email
+
   };
+  // interface SuccessProps {
+  //   email: string;
+  // }
+  // const Success: React.FC<SuccessProps> = ({ email }) => {
+  //   return <Success email={""} />;
+  // }
+
   return (
     <>
       {!success && (
@@ -60,13 +74,23 @@ export default function Home() {
                   </div>
                   <input
                     type="email"
+                    id="input"
                     {...register("email", {
                       required: true,
                       pattern: /^\S+@\S+$/i,
                     })}
                   />
                   <button id="submit" type="submit">
+                    <Link href={{
+                      pathname: "/success",
+                      query: {
+                        email: "data.email"
+                        // email: `${value.value}`
+                      },
+                    }}>
                     Subscribe to monthly newsletter
+                    </Link>
+                    {/* Subscribe to monthly newsletter */}
                   </button>
                 </form>
               </div>
@@ -74,7 +98,9 @@ export default function Home() {
             </div>
           </main>
         </body>
-      )}
+       )}
+
+      {/* {success && <Success email={emailValue} />} */}
       {success && <Success />}
     </>
   );
