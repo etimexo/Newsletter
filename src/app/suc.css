@@ -4,19 +4,36 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
   }
+:root {
+    --linear: hsl(4, 100%, 67%);
+}
 .main2 {
-    width: 30vw;
-    min-height: 70vh;
-    padding: 40px;
-    position: relative;
+    padding: 5% 7%;
 }
 .check2 {
-    position: relative;
-    left: -2vw;
-    width: 10vw;
-    height: 10vh;
+    width: 19%;
+    height: 12vh;
 }
 .h12 {
-    margin-top: 15px;
     font-size: 3rem;
+    margin-bottom: 2vh;
+}
+.btns {
+    max-width: 80vw;
+}
+.ps {
+    font-size: 1.2rem;
+}
+.btns:hover, .btns:focus {
+    cursor: pointer;
+    background-image: linear-gradient(to right, hsl(4, 100%, 67%), rgb(206, 43, 43));
+}
+@media only screen and (min-width: 900px) {
+    .main2 {
+        padding: 4%;
+        width: 40%;
+    }
+    .check2 {
+        margin-bottom: 2vh;
+    }
 }

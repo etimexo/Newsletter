@@ -3,6 +3,7 @@
   --white: hsl(0, 0%, 100%);
   --darkgrey: hsl(234, 29%, 20%);
   --grey: hsl(231, 7%, 60%);
+  --linear: hsl(4, 100%, 67%);
 }
 * {
   padding: 0;
@@ -76,9 +77,16 @@ button {
   color: var(--white);
   font-size: 1rem;
 }
+button:hover, button:focus {
+  cursor: pointer;
+    background-image: linear-gradient(to right, hsl(4, 100%, 67%), rgb(206, 43, 43));
+}
 a {
   text-decoration: none;
   color: white;
+}
+#input:hover, #input:focus {
+  cursor: pointer;
 }
 @media only screen and (min-width: 600px) {
   body {

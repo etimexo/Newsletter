@@ -4,36 +4,28 @@ import "./globals.css";
 import mobile from "../../public/illustration-sign-up-mobile.svg";
 import desktop from "../../public/illustration-sign-up-desktop.svg";
 import check from "../../public/icon-list.svg";
-import Button from "./button";
 import Success from "./success/page";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import { type } from "os";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 export default function Home() {
-  let value = document.getElementById("input")
   const [success, setSuccess] = useState(false);
-  let [emailValue, setEmailValue] = useState("");
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const router = useRouter();
+  const pathname = usePathname();
+  const query = useSearchParams();
   const onSubmit = (data: any) => {
-    // setEmailValue(data.email);
+    const emailValue = data.email;
     setSuccess(true);
-    console.log(data);
-    const emailValue = data.email
-
+    router.push(`?email=${emailValue}`);
   };
-  // interface SuccessProps {
-  //   email: string;
-  // }
-  // const Success: React.FC<SuccessProps> = ({ email }) => {
-  //   return <Success email={""} />;
-  // }
 
   return (
     <>
@@ -63,7 +55,6 @@ export default function Home() {
                   </span>{" "}
                   <br />
                 </p>
-                {/* <Button setEmailValue={setEmailValue} setSuccess={setSuccess} /> */}
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div className="labeling">
                     <label htmlFor="email">Email address</label>
@@ -81,16 +72,7 @@ export default function Home() {
                     })}
                   />
                   <button id="submit" type="submit">
-                    <Link href={{
-                      pathname: "/success",
-                      query: {
-                        email: "data.email"
-                        // email: `${value.value}`
-                      },
-                    }}>
                     Subscribe to monthly newsletter
-                    </Link>
-                    {/* Subscribe to monthly newsletter */}
                   </button>
                 </form>
               </div>
@@ -98,9 +80,7 @@ export default function Home() {
             </div>
           </main>
         </body>
-       )}
-
-      {/* {success && <Success email={emailValue} />} */}
+      )}
       {success && <Success />}
     </>
   );

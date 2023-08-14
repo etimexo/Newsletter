@@ -7,7 +7,7 @@ const roboto = Roboto({ weight:['400', '700'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Newsletter',
-  description: 'An email sign-up newsletter page',
+  description: 'A newsletter sign-up page with success display',
 }
 
 export default function RootLayout({
