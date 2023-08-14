@@ -13,6 +13,7 @@ export default function Success() {
   const [success, setSuccess] = useState(false);
   function backHome() {
     setSuccess(true);
+    alert("NB: No actual mail was sent, this is just a demo")
   }
 
   return (
